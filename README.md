@@ -22,14 +22,14 @@ Length can be positive or negative.
 
 **E.g. len:4, character:'0', leading:true**
 
-	    a -> 000a  
-	  aaa -> 0aaa  
+	a -> 000a  
+	aaa -> 0aaa  
 	aaaaa -> aaaaa  
 
 **E.g. len:-2, character:'0', leading:true**
 
-	    a -> 00a  
-	  aaa -> 00aaa  
+	a -> 00a  
+	aaa -> 00aaa  
 	aaaaa -> 00aaaaa
 
 ###character (String)
