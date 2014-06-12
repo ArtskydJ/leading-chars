@@ -15,7 +15,9 @@ Creates leading or trailing characters in string or number
 LeadingChars is a constructor function that takes options and exports the user function.
 
 ##opts
-###len
+
+Here are descriptions of the 
+###len (Number)
 Length can be positive or negative.  
 Here are examples of a length of 4 with char '0':  
 a -> 000a  
@@ -26,17 +28,25 @@ a -> 00a
 aaa -> 00aaa  
 aaaaa -> 00aaaaa
 
-###character
+###character (String)
 What character is appended; In the previous examples it was '0'
 
-###leading
+This can be multiple characters in length, e.g. 'hi'
+
+###leading (Boolean)
 The module name can be slightly misleading. The module is also capable of trailing characters.  
-Leading:  
-	000a  
-	0aaa  
-Trailing: 
-	a000  
-	aaa0 
+Leading: true (Leading)  
+	a -> 000a  
+	aaa -> 0aaa  
+Leading: false (Trailing)  
+	a -> a000  
+	aaa -> aaa0 
+
+##constructed(str, opts)
+###str (String or Number)
+This is the string that is appended to.
+###opts
+Same as 'LeadingChars()' opts (see above)
 
 ##Use
 	//Create a template
@@ -55,6 +65,6 @@ Trailing:
 		character: '\t',
 		leading: true
 	})
-	indent('Hey what is up') //returns '\tHey what is up'
-	indent()                 //returns '\t'
-	indent('blah')           //returns '\tblah'
+	indent('Hey what is up')  //returns '\tHey what is up'
+	indent()                  //returns '\t'
+	indent('blah', {len: -2}) //returns '\t\tblah'
