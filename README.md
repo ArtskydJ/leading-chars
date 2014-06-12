@@ -3,7 +3,7 @@ leading-chars
 
 ##Description
 
-Creates leading or trailing characters in string or number
+Creates leading or trailing characters in a string or number
 
 ##Install
 	npm install leading-chars
@@ -16,17 +16,17 @@ LeadingChars is a constructor function that takes options and exports the user f
 
 ##opts
 
-Here are descriptions of the 
+Here are descriptions of the properties
 ###len (Number)
 Length can be positive or negative.  
-Here are examples of a length of 4 with char '0':  
-a -> 000a  
-aaa -> 0aaa  
-aaaaa -> aaaaa  
-Here are examples of a length of -2 with char '0':  
-a -> 00a  
-aaa -> 00aaa  
-aaaaa -> 00aaaaa
+**E.g. len:4, character:'0', leading:true**  
+	    a -> 000a  
+	  aaa -> 0aaa  
+	aaaaa -> aaaaa  
+**E.g. len:-2, character:'0', leading:true**   
+	    a -> 00a  
+	  aaa -> 00aaa  
+	aaaaa -> 00aaaaa
 
 ###character (String)
 What character is appended; In the previous examples it was '0'
@@ -34,11 +34,13 @@ What character is appended; In the previous examples it was '0'
 This can be multiple characters in length, e.g. 'hi'
 
 ###leading (Boolean)
-The module name can be slightly misleading. The module is also capable of trailing characters.  
-Leading: true (Leading)  
+The module name can be slightly misleading. The module is also capable of trailing characters.
+
+**Leading: true (Leading)**  
 	a -> 000a  
-	aaa -> 0aaa  
-Leading: false (Trailing)  
+	aaa -> 0aaa
+
+**Leading: false (Trailing)**  
 	a -> a000  
 	aaa -> aaa0 
 
