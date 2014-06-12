@@ -10,12 +10,8 @@ module.exports = function LeadingChars(constructorOpts) {
 		opts = xtend(defaultOpts, constructorOpts, opts)
 		str = (str || '').toString()
 		var result = ''
-		if (opts.len>0)
-			for(var i=0; i<opts.len-str.length; i++)
-				result += opts.character
-		else
-			for(var i=0; i<Math.abs(opts.len); i++)
-				result += opts.character
+		for(var i=0; (opts.len>0)? i<opts.len-str.length : i<Math.abs(opts.len); i++)
+			result += opts.character
 		return opts.leading? result + str : str + result
 	}
 }
