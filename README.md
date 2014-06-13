@@ -15,6 +15,7 @@ leading-chars
 	- [str](https://github.com/ArtskydJ/leading-chars#str-string-or-number)
 	- [opts](https://github.com/ArtskydJ/leading-chars#opts-1)
 - [Use](https://github.com/ArtskydJ/leading-chars#use)
+- [License](https://github.com/ArtskydJ/leading-chars#license)
 
 ##Description
 
@@ -91,3 +92,7 @@ Same as 'LeadingChars()' [opts](https://github.com/ArtskydJ/leading-chars#opts)
 	indent('Hey what is up')  //returns '\tHey what is up'
 	indent()                  //returns '\t'
 	indent('blah', {len: -2}) //returns '\t\tblah'
+
+##License
+
+[MIT](http://opensource.org/licenses/MIT)
