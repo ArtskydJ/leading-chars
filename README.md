@@ -1,6 +1,8 @@
 leading-chars
 =============
 
+[![Build Status](https://travis-ci.org/ArtskydJ/leading-chars.svg?branch=master)](https://travis-ci.org/ArtskydJ/leading-chars)
+
 - [Description](https://github.com/ArtskydJ/leading-chars#description)
 - [Install](https://github.com/ArtskydJ/leading-chars#install)
 - [Require](https://github.com/ArtskydJ/leading-chars#require)
