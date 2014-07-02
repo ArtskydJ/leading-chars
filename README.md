@@ -3,19 +3,19 @@ leading-chars
 
 [![Build Status](https://travis-ci.org/ArtskydJ/leading-chars.svg?branch=master)](https://travis-ci.org/ArtskydJ/leading-chars)
 
-- [Description](https://github.com/ArtskydJ/leading-chars#description)
-- [Install](https://github.com/ArtskydJ/leading-chars#install)
-- [Require](https://github.com/ArtskydJ/leading-chars#require)
-- [LeadingChars(opts)](https://github.com/ArtskydJ/leading-chars#leadingcharsopts)
-	- [opts](https://github.com/ArtskydJ/leading-chars#opts)
-		- [len](https://github.com/ArtskydJ/leading-chars#len-number)
-		- [character](https://github.com/ArtskydJ/leading-chars#character-string)
-		- [leading](https://github.com/ArtskydJ/leading-chars#description)
-- [constructed(str, opts)](https://github.com/ArtskydJ/leading-chars#description)
-	- [str](https://github.com/ArtskydJ/leading-chars#str-string-or-number)
-	- [opts](https://github.com/ArtskydJ/leading-chars#opts-1)
-- [Use](https://github.com/ArtskydJ/leading-chars#use)
-- [License](https://github.com/ArtskydJ/leading-chars#license)
+- [Description](#description)
+- [Install](#install)
+- [Require](#require)
+- [LeadingChars(opts)](#leadingcharsopts)
+	- [opts](#opts)
+		- [len](#len-number)
+		- [character](#character-string)
+		- [leading](#description)
+- [constructed(str, opts)](#description)
+	- [str](#str-string-or-number)
+	- [opts](#opts-1)
+- [Use](#use)
+- [License](#license)
 
 ##Description
 
@@ -70,7 +70,7 @@ The module name can be slightly misleading. The module is also capable of traili
 ###str (String or Number)
 This is the string that is appended to.
 ###opts
-Same as 'LeadingChars()' [opts](https://github.com/ArtskydJ/leading-chars#opts)
+Same as 'LeadingChars()' [opts](#opts)
 
 ##Use
 	//Create a template
