@@ -2,7 +2,8 @@
 var LeadingChars = require('../index.js')
 
 var appendDots = LeadingChars({
-	len: -3,
+	len: 3,
+	overall: false,
 	character: '.',
 	leading: false
 })

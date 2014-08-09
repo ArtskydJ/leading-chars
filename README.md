@@ -2,6 +2,7 @@ leading-chars
 =============
 
 [![Build Status](https://travis-ci.org/ArtskydJ/leading-chars.svg?branch=master)](https://travis-ci.org/ArtskydJ/leading-chars)
+[![Github Repository](http://img.shields.io/badge/Repository-Github-brightgreen.svg)](https://github.com/ArtskydJ/leading-chars)
 
 - [Description](#description)
 - [Install](#install)
@@ -32,7 +33,12 @@ LeadingChars is a constructor function that takes options and exports the user f
 
 ##opts
 
-Here are descriptions of the properties
+- `Opts` has the following properties:
+	- `len` is a number of the length (see examples).
+	- `overall` is a boolean. It specifies whether the `character` is filled up to `len`, (`true`,) or if the `character` is concatenated `len` times, (`false`).
+	- `character` is the character that is added to the input string or number.
+	- `leading` is a boolean of whether the character should be added to the beginning or the end.
+
 ###len (Number)
 Length can be positive or negative.
 

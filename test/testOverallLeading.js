@@ -3,6 +3,7 @@ var LeadingChars = require('../index.js')
 
 var leadingZeroes = LeadingChars({
 	len: 6,
+	overall: true,
 	character: '0',
 	leading: true
 })
