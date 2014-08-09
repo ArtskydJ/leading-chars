@@ -7,15 +7,15 @@ leading-chars
 - [Description](#description)
 - [Install](#install)
 - [Require](#require)
-- [LeadingChars(opts)](#leadingcharsopts)
-	- [opts](#opts)
+- [LeadingChars(options)](#leadingcharsopts)
+	- [options](#options)
 		- [len](#len-number)
 		- [character](#character-string)
 		- [leading](#description)
-- [constructed(str, opts)](#description)
-	- [str](#str-string-or-number)
-	- [opts](#opts-1)
-- [Use](#use)
+- [constructed(input, options)](#description)
+	- [input](#input)
+	- [options](#options-1)
+- [Examples](#examples)
 - [License](#license)
 
 ##Description
@@ -26,78 +26,139 @@ Creates leading or trailing characters in a string or number
 	npm install leading-chars
 	
 ##Require
-	var LeadingChars = require('leading-chars')
 
-##LeadingChars(opts)
+```js
+var LeadingChars = require('leading-chars')
+```
+
+##LeadingChars(options)
+
 LeadingChars is a constructor function that takes options and exports the user function.
 
-##opts
+##options
 
-- `Opts` has the following properties:
-	- `len` is a number of the length (see examples).
-	- `overall` is a boolean. It specifies whether the `character` is filled up to `len`, (`true`,) or if the `character` is concatenated `len` times, (`false`).
-	- `character` is the character that is added to the input string or number.
-	- `leading` is a boolean of whether the character should be added to the beginning or the end.
+If you don't understand these notes, check out the [examples](#examples), they should make it more clear.
 
-###len (Number)
-Length can be positive or negative.
+- `options` is an object with the following properties:
+	- `len` is a number for how many characters to fill or concatenate (depending on `overall`).
+	- `overall` is a boolean. It specifies whether the `character` is filled up to `len`, (`true`), or if the `character` is concatenated `len` times, (`false`).
+	- `character` is the character that is added to the string or number.
+	- `leading` is a boolean of whether `character` should be added to the beginning or the end. If you want the concatenated characters to lead the string or number, set this to `true`. If you want them characters to trail, set this to `false`.
+- Returns: [`constructed(input, options)`](#constructedinput-options)
 
-**E.g. len:4, character:'0', leading:true**
+##constructed(input, options)
+###input
+This is the string or number that is appended to. This is not mutated.
 
-	a -> 000a  
-	aaa -> 0aaa  
-	aaaaa -> aaaaa  
+###options
+Same as `LeadingChars()`s [options](#options).
 
-**E.g. len:-2, character:'0', leading:true**
+##Examples
 
-	a -> 00a  
-	aaa -> 00aaa  
-	aaaaa -> 00aaaaa
+Leading Zeroes:
 
-###character (String)
-What character is appended; In the previous examples it was '0'
+```js
+var leadingZeroes = LeadingChars({
+	len: 8,
+	overall: true,
+	character: '0',
+	leading: true
+})
 
-This can be multiple characters in length, e.g. 'hi'
+leadingZeroes('5f39a6') //returns '005f39a6'
+leadingZeroes('')       //returns '00000000'
+leadingZeroes('ftw')    //returns '00000ftw'
+```
 
-###leading (Boolean)
-The module name can be slightly misleading. The module is also capable of trailing characters.
+Indent with one tab:
 
-**Leading: true (Leading)**
+```js
+var indent = LeadingChars({
+	len: 1,
+	overall: false,
+	character: '\t',
+	leading: true
+})
 
-	a -> 000a  
-	aaa -> 0aaa
+indent('Hey what is up')  //returns '\tHey what is up'
+indent()                  //returns '\t'
+indent('blah', {len: 2})  //returns '\t\tblah'
+```
 
-**Leading: false (Trailing)**
+Append full stops: (Sometimes referred to as 'periods')
 
-	a -> a000  
-	aaa -> aaa0 
+```js
+var addFullStop = LeadingChars({
+	len: 1,
+	overall: false,
+	character: '.',
+	leading: false
+})
 
-##constructed(str, opts)
-###str (String or Number)
-This is the string that is appended to.
-###opts
-Same as 'LeadingChars()' [opts](#opts)
+addFullStop('Hey what is up') //returns 'Hey what is up.'
+addFullStop(null)             //returns '.'
+addFullStop('blah', {len: 3}) //returns 'blah...'
+```
 
-##Use
-	//Create a template
-	var leadingZeroes = LeadingChars({
-		len: 8,
-		character: '0',
-		leading: true
-	})
+Fill with J's:
 
-	leadingZeroes('5f39a6') //returns '005f39a6'
-	leadingZeroes('')       //returns '00000000'
-	leadingZeroes('ftw')    //returns '00000ftw'
+```js
+var fillWithJs = LeadingChars({
+	len: 4,
+	overall: true,
+	character: 'J',
+	leading: true
+})
 
-	var indent = LeadingChars({
-		len: -1,
-		character: '\t',
-		leading: true
-	})
-	indent('Hey what is up')  //returns '\tHey what is up'
-	indent()                  //returns '\t'
-	indent('blah', {len: -2}) //returns '\t\tblah'
+fillWithJs('a')     //returns 'JJJa'
+fillWithJs('aaa')   //returns 'Jaaa'
+fillWithJs('aaaaa') //returns 'aaaaa'
+```
+
+Prefix 2 E's:
+
+```js
+var prefixTwoEs = LeadingChars({
+	len: 2,
+	overall: false,
+	character: 'E',
+	leading: true
+})
+
+prefixTwoEs('a')     //returns 'EEa'  
+prefixTwoEs('aaa')   //returns 'EEaaa'  
+prefixTwoEs('aaaaa') //returns 'EEaaaaa'
+```
+
+Leading Smileys:
+
+```js
+var leadingSmileys = LeadingChars({
+	len: 2,
+	overall: false,
+	character: ':) ',
+	leading: true
+})
+
+leadingSmileys('lol')  //returns ':) :) lol'  
+leadingSmileys('wat')  //returns ':) :) wat'  
+leadingSmileys('uber') //returns ':) :) uber'
+```
+
+Trailing Frowneys:
+
+```js
+var trailingFrowneys = LeadingChars({
+	len: 1,
+	overall: false,
+	character: ' :(',
+	leading: true
+})
+
+trailingFrowneys('no')     //returns 'no :('  
+trailingFrowneys('so sad') //returns 'so sad :('  
+trailingFrowneys('um why') //returns 'um why :('
+```
 
 ##License
 
