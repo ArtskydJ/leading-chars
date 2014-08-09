@@ -20,6 +20,9 @@ leading-chars
 Creates leading or trailing characters in a string or number
 
 ##Install
+
+Install with [NPM](http://nodejs.org)
+
 	npm install leading-chars
 	
 ##Require
