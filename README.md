@@ -2,7 +2,8 @@ leading-chars
 =============
 
 [![Build Status](https://travis-ci.org/ArtskydJ/leading-chars.svg?branch=master)](https://travis-ci.org/ArtskydJ/leading-chars)
-[![Github Repository](http://img.shields.io/badge/Repository-Github-brightgreen.svg)](https://github.com/ArtskydJ/leading-chars)
+[![Dependency Status](https://david-dm.org/artskydj/leading-chars.svg)](https://david-dm.org/artskydj/leading-chars)
+[![devDependency Status](https://david-dm.org/artskydj/leading-chars/dev-status.svg)](https://david-dm.org/artskydj/leading-chars#info=devDependencies)
 
 - [Description](#description)
 - [Install](#install)
