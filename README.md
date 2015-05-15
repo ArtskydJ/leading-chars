@@ -5,56 +5,10 @@ leading-chars
 [![Dependency Status](https://david-dm.org/artskydj/leading-chars.svg)](https://david-dm.org/artskydj/leading-chars)
 [![devDependency Status](https://david-dm.org/artskydj/leading-chars/dev-status.svg)](https://david-dm.org/artskydj/leading-chars#info=devDependencies)
 
-- [Description](#description)
-- [Install](#install)
-- [Require](#require)
-- [LeadingChars(options)](#leadingcharsoptions)
-	- [options](#options)
-- [constructed(input, options)](#constructedinput-options)
-	- [input](#input)
-	- [options](#options-1)
-- [Examples](#examples)
-- [License](#license)
-
-##Description
 
 Creates leading or trailing characters in a string or number
 
-##Install
-
-Install with [NPM](http://nodejs.org)
-
-	npm install leading-chars
-	
-##Require
-
-```js
-var LeadingChars = require('leading-chars')
-```
-
-##LeadingChars(options)
-
-LeadingChars is a constructor function that takes options and exports the user function.
-
-##options
-
-If you don't understand these notes, check out the [examples](#examples), they should make it more clear.
-
-- `options` is an object with the following properties:
-	- `len` is a number for how many characters to fill or concatenate (depending on `overall`).
-	- `overall` is a boolean. It specifies whether the `character` is filled up to `len`, (`true`), or if the `character` is concatenated `len` times, (`false`).
-	- `character` is the character that is added to the string or number.
-	- `leading` is a boolean of whether `character` should be added to the beginning or the end. If you want the concatenated characters to lead the string or number, set this to `true`. If you want them characters to trail, set this to `false`.
-- Returns: [`constructed(input, options)`](#constructedinput-options)
-
-##constructed(input, options)
-###input
-This is the string or number that is appended to. This is not mutated.
-
-###options
-Same as `LeadingChars()`s [options](#options).
-
-##Examples
+# examples
 
 Leading Zeroes:
 
@@ -160,7 +114,38 @@ trailingFrowneys('no')     //returns 'no :('
 trailingFrowneys('so sad') //returns 'so sad :('  
 trailingFrowneys('um why') //returns 'um why :('
 ```
+# api
 
-##License
+```js
+var LeadingChars = require('leading-chars')
+```
 
-[MIT](http://opensource.org/licenses/MIT)
+# `LeadingChars(options)`
+
+LeadingChars is a constructor function that takes options and exports the user function.
+
+If you don't understand these notes, check out the [examples](#examples), they should make it more clear.
+
+- `options` is an object with the following properties:
+	- `len` is a number for how many characters to fill or concatenate (depending on `overall`).
+	- `overall` is a boolean. It specifies whether the `character` is filled up to `len`, (`true`), or if the `character` is concatenated `len` times, (`false`).
+	- `character` is the character that is added to the string or number.
+	- `leading` is a boolean of whether `character` should be added to the beginning or the end. If you want the concatenated characters to lead the string or number, set this to `true`. If you want them characters to trail, set this to `false`.
+- Returns: [`constructed(input, options)`](#constructedinput-options)
+
+# constructed(input, options)
+
+- `input` is the string or number that is appended to.
+
+- `options` are the same as `LeadingChars()`s [options](#options), and they take precedence.
+
+# install
+
+Install with [NPM](https://nodejs.org/download)
+
+	npm install leading-chars
+	
+
+# license
+
+[VOL](http://veryopenlicense.com)
